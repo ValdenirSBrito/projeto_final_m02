@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pokedéx</title>
+</head>
+
+<body>
+    <nav>
+        <article>
+            <img src="/img/pokeball2.gif" class="img-fluid gif" alt="Animação PokeBola">
+            <h1><a href="/">Pokedéx</a></h1>
+
+        </article>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="/cadastro">Cadastro</a>
+            </li>
+            <!-- <li>
+                <a href="#inscrever">Inscreva-se</a>
+            </li> -->
+        </ul>
+    </nav>
+        <% if(message != "") {  %>
+            <section id="message">
+                <p><%= message %></p> <span id="close">&times;</span>
+            </section>
+        <% }  %>
+
+    <header>
+        <article>
+            <h1>POKEDÉX</h1>
+            <p>Conheça Todos os Pokemons Cadastrados até o momento</p>
+        </article>
+
+        
+    </header>
+    <% pokedex.forEach(item => { %>
+    <section id="pokedex">
+        
+        
+            <div class="item-pokedex">
+                <!-- <div class="item-titulo <%= item.nome %>">
+                    <a href="/detalhes/<%= item.nome %>">
+                        <%= item.nome %></a>
+                </div> -->
+                <div class="item-imagem">
+                    <a href="/detalhes/<%= item.numero %>">
+                    <img src="<% if (item.imagem == "" || !item.imagem) { %>./assets/img/question.png">
+                    <% } else { %><%= item.imagem %>"> <% } %></a>
+                    <h2><%= item.nome%></h2>
+                    <h4><%= item.tipo %></h4>
+                </div>
+                <!-- <div class="item-tipo">
+                    <a href="/detalhes/<%= item.tipo %>">
+                        <%= item.tipo %></a>
+                    
+                </div> -->
+            </div>
+                
+    </section>
+    <% }) %>
+
+        <script src="/js/script.js"></script>
+        
+        <footer>
+            <p>Todos os direitos reservados.</p>
+        </footer>
+</body>
+</html>
+         
