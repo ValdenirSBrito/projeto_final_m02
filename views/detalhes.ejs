@@ -24,12 +24,12 @@
             <section class="card">
                 <article id="content">
                         <ul>
-                            <li>Nome: <%= filme.nome %></li>
+                            <center><li>Nome: <b><%= filme.nome %></b></li></center>
                             <li>Descrição: <%= filme.descricao %></li>
                             <a href="/">
-                                <img src="<%= filme.imagem %>" width=200>
+                               <center><img  src="<%= filme.imagem %>" width=200></center> 
                             </a><br><br>
-                            <a href="/deletar/<%= filme.id %>">DELETAR!</a>
+                           <center><a href="/deletar/<%= filme.id %>">DELETAR!</a></center> 
                         </ul>
                 </article>
             </section>
